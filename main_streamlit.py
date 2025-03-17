@@ -1,7 +1,7 @@
 import streamlit as st
 import warnings
 from datetime import datetime
-from flight_finder_and_trip_planner_crewai.crew import FlightFinderCrewai
+from src.crew import FlightFinderCrewai
 
 # Suppress specific warnings
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")

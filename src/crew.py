@@ -3,7 +3,7 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
 
 # Custom Tool
-from flight_finder_and_trip_planner_crewai.tools.google_flights import SearchFlights
+from src.tools.google_flights import SearchFlights
 import os
 
 model = LLM(model=os.environ.get("MODEL"), api_key=os.environ.get("OPENAI_API_KEY"))

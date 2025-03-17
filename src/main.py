@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import warnings
 
-from flight_finder_and_trip_planner_crewai.crew import FlightFinderCrewai
+from src.crew import FlightFinderCrewai
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
