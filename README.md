@@ -1,49 +1,118 @@
-# Flight Finder and Trip Planner Using CrewAI 
+# Flight Finder & Trip Planner CrewAI
 
-A CrewAI agent based app that helps you in finding flights and planning your itinerary at the destination with top recommended places to visit.
+## 🚀 Project Overview
+This project is a **Flight Finder & Trip Planner** built using **CrewAI**, integrating AI-powered flight search functionalities. The backend is developed using **Next.js & Python**, and it utilizes **OpenAI's API & SerpAPI** for data retrieval.
 
+---
 
-# Required API Keys
+## 📌 Steps Followed
 
-1. OpenAI
-2. SerpAPI (for Google Flights)
-3. Serper API (for web searchs)
+### 1️⃣ **Set Up Virtual Environment**
+```sh
+python -m venv .venv
+```
+Activate it:
+```sh
+# Windows (PowerShell)
+.venv\Scripts\Activate
 
-Add the above API keys in `.env` file
+# Mac/Linux
+source .venv/bin/activate
+```
 
-# How to Run:
+### 2️⃣ **Installed Dependencies**
+```sh
+pip install -r requirements.txt
+```
 
-Note: _The code is tested on Python version: 3.12.0_
+### 3️⃣ **Configured API Keys**
+- OpenAI API Key (for AI responses)
+- SerpAPI Key (for flight search)
 
-1. Clone the repo
-2. Install UV: `pip install uv`
-3. Create virtual environment using, `uv venv --python 3.12`
-4. Run `crewai install` to install all the dependencies
-5. Run `crewai run`
+Added them to `.env`:
+```sh
+OPENAI_API_KEY=your-api-key
+SERPAPI_API_KEY=your-api-key
+```
 
-> [!CAUTION]
-> Google SERPAPI is used here to search for flights. If using a free tier, it shouldn't be used for commercial purposes.
+### 4️⃣ **Ran the Streamlit App**
+```sh
+streamlit run main_streamlit.py
+```
 
-# Streamlit App:
+### 5️⃣ **Started Next.js Backend**
+```sh
+npm install
+npm run dev
+```
 
-If you want to run this as a Streamlit app follow the steps:
+### 6️⃣ **Tested API**
+Checked if the API is running:
+```sh
+http://localhost:3000/api/flight
+```
 
-1. Clone the repo
-2. Install UV: `pip install uv`
-3. Create virtual environment using, `uv venv --python 3.12`
-4. Install the libraries mentioned in `pyproject.toml` dependencies section using `uv pip install xxxxxx`
-5. To run the app: `streamlit run main_streamlit.py` and follow the instructions to access it in a browser
+---
 
-# Sample Results:
+## ❌ Errors Faced & Fixes
 
-## CrewAI Run: 
-The output is stored as a `trip_itinerary.md` file:
+### ⚠️ **SerpAPI Import Error**
+**Error:**
+```sh
+ImportError: cannot import name 'GoogleSearch' from 'serpapi'
+```
+✅ **Fix:** Installed correct package
+```sh
+pip install serpapi
+```
 
-<img width="964" alt="Screenshot 2024-11-25 at 9 46 17 PM" src="https://github.com/user-attachments/assets/98c1ea7c-96b6-453d-8292-c05e05d6dd24">
-<img width="964" alt="Screenshot 2024-11-25 at 9 46 44 PM" src="https://github.com/user-attachments/assets/9b4c241d-e750-4000-86ad-53d8ff033938">
+### ⚠️ **OpenAI Rate Limit Error (429)**
+**Error:**
+```sh
+RateLimitError: OpenAIException - Error code: 429 - 'You exceeded your current quota'
+```
+✅ **Fix:**
+1. Checked **OpenAI billing**: https://platform.openai.com/account/billing
+2. Used a **new API key** or upgraded plan
 
+### ⚠️ **Backend Not Responding, Serving HTML Instead of JSON**
+**Error:** When visiting `http://localhost:3000/api/flight`, an HTML page loaded instead of JSON response.
+✅ **Fix:** Checked API route and ensured it was properly set up in `Next.js` backend.
 
-## Output of Streamlit app:
-<img width="1440" alt="Screenshot 2024-11-26 at 8 53 52 PM" src="https://github.com/user-attachments/assets/9ab5a7af-9457-4da4-a669-3680995b6dd4">
-<img width="1440" alt="Screenshot 2024-11-26 at 8 54 15 PM" src="https://github.com/user-attachments/assets/9c0a8602-1b66-4534-9ed3-884229f5267b">
-<img width="1440" alt="Screenshot 2024-11-26 at 8 54 24 PM" src="https://github.com/user-attachments/assets/65d7d002-3361-4b0b-be52-c3e0c1d239d4">
+---
+
+## 🛠️ How to Run the Project
+
+1️⃣ **Clone the Repository**
+```sh
+git clone https://github.com/YOUR_USERNAME/flight_finder_and_trip_planner_crewai.git
+cd flight_finder_and_trip_planner_crewai
+```
+
+2️⃣ **Set Up Virtual Environment & Install Dependencies**
+```sh
+python -m venv .venv
+.venv\Scripts\Activate
+pip install -r requirements.txt
+```
+
+3️⃣ **Run Backend (Next.js)**
+```sh
+npm install
+npm run dev
+```
+
+4️⃣ **Run Streamlit App**
+```sh
+streamlit run main_streamlit.py
+```
+
+---
+
+## 📌 Author
+**Arunkumar**
+
+GitHub: [badvibesarun](https://github.com/badvibesarun)
+
+---
+
